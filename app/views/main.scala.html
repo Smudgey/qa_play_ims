@@ -1,0 +1,40 @@
+@(title:String)(content:Html)
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>@title</title>
+
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+            <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+            <!-- Bootstrap core CSS -->
+        <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/bootstrap.min.css")">
+            <!-- Bootstrap theme -->
+        <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/bootstrap-theme.min.css")">
+            <!-- Custom styles for this template -->
+        <link rel="stylesheet" href="@routes.Assets.versioned("stylesheets/theme.css")">
+
+        <link rel="stylesheet" href="@routes.Assets.versioned("stylesheets/zoom.css")">
+
+
+        <script src="@routes.Assets.versioned("javascripts/jquery-2.2.4.min.js")"></script>
+
+        <script src="@routes.Assets.versioned("javascripts/bootstrap.min.js")"></script>
+        <script src="@routes.Assets.versioned("javascripts/catalogue.js")"></script>
+        <script src="@routes.Assets.versioned("javascripts/checkout.js")"></script>
+        <script src="@routes.Assets.versioned("javascripts/pageChanger.js")"></script>
+        <script src="@routes.Assets.versioned("javascripts/formValidation.js")"></script>
+
+
+    </head>
+    <body>
+
+        <a href="@routes.StockController.index()">Customer orders</a>
+        <a href="@routes.PurchaseController.index()">Purchase orders</a>
+
+
+@content
+</body>
+</html>

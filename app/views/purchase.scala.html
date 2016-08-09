@@ -1,0 +1,29 @@
+@import play.api.Play.current
+@import play.api.i18n.Messages.Implicits._
+@(implicit flash: Flash)
+
+
+@main(Messages("title.purchase")) {
+
+
+    @if(flash.get("type").isDefined) {
+        @if(flash.get("type").toString == "success") {
+            <h2>Successful</h2>
+        }
+    }
+
+    <form id="purchaseOrderForm" action="@routes.PurchaseController.orderStock()" method="post">
+        <div>
+            <h3>Purchase order Items</h3>
+            <div onclick="anotherField()">+</div>
+        </div>
+        <div id="productList">
+            <div>
+                <input name="itemID" type="text" placeholder="ID">
+                <input name="amount" type="text" placeholder="Amount">
+                <div onclick="removeMe(this)">-</div>
+            </div>
+        </div>
+        <input type="button" onclick="sendJSON()" value="Order Stock">
+    </form>
+}

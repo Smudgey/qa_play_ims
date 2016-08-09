@@ -1,0 +1,6 @@
+title.home = IMS
+title.viewStock = View Stock
+title.stock = Stock Management
+title.purchase = Order Stock
+
+stock.added = Stock has been added successfully

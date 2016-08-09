@@ -1,0 +1,20 @@
+@import play.api.Play.current
+@import play.api.i18n.Messages.Implicits._
+@(product: Product)
+@main(Messages("title.viewStock")) {
+
+    <p>ID:</p>
+    <p>@product.itemID</p>
+    <p>Name:</p>
+    <p>@product.product</p>
+    <p>Description:</p>
+    <p>@product.description</p>
+    <p>Categories:</p>
+    @for(category <- product.category) {
+        <p>@category</p>
+    }
+    <p>Price:</p>
+    <p>@product.price</p>
+    <p>Stock count:</p>
+    <p>@product.stock</p>
+}
