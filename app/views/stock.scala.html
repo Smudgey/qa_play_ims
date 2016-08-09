@@ -1,0 +1,16 @@
+@import play.api.Play.current
+@import play.api.i18n.Messages.Implicits._
+@(implicit flash: Flash)
+@main(Messages("title.stock")) {
+
+    @if(flash.get("type").isDefined) {
+
+            <h2>Successful</h2>
+
+    }
+
+    @helper.form(routes.StockController.viewStock()) {
+        <input name="pid" type="text" placeholder="Product ID">
+        <button type="submit">Find Stock</button>
+    }
+}
